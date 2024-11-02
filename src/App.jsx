@@ -32,7 +32,7 @@ function App() {
     formData.append("audioFile", selectedFile);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/upload-audio", formData, {
+      const response = await axios.post("https://ai-song-detector-server.onrender.com/api/upload-audio", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
