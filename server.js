@@ -14,7 +14,7 @@ const storage_url = "https://storage.ircamamplify.io";
 const aiDetectorUrl = "https://api.ircamamplify.io/aidetector/";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Enable CORS for frontend requests
 app.use(cors());
