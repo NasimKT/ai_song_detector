@@ -6,8 +6,8 @@ import path from "path";
 import multer from "multer";
 import cors from "cors";
 
-const client_id = "085b572a-3040-4e23-b9d5-df1908b877a3";
-const client_secret = "HnXKaKG62pp2xFfLPAteAdZZkR1mqG_EBl3XKw9Olek";
+const client_id = "10e600ca-ef26-48d4-86c6-20beed620ce0";
+const client_secret = "a7hsTd7SlErZdoUU86lDMrFcE1KSszM-KRjLe-tIBLA";
 const auth_url = "https://api.ircamamplify.io/oauth/token";
 const manager_url = "https://storage.ircamamplify.io/manager/";
 const storage_url = "https://storage.ircamamplify.io";
