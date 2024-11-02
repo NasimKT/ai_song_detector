@@ -1,4 +1,3 @@
-// frontend/src/App.js
 import React, { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
@@ -61,7 +60,6 @@ function App() {
     <div className="App">
       <h1 className="title">AI Song Detector</h1>
 
-      {/* Hide dropzone when loading */}
       {!loading && (
         <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : ''}`}>
           <input {...getInputProps()} />
@@ -80,7 +78,7 @@ function App() {
       </button>
 
 
-      {loading && <div className="loader"></div>} {/* Circular loader element */}
+      {loading && <div className="loader"></div>}
 
       {result && (
         <div className="result">

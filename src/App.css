@@ -1,4 +1,3 @@
-/* Base Styles for All Screens */
 body, html {
   margin: 0;
   padding: 0;
@@ -7,13 +6,13 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1C1C1C; /* Dark Grey Background */
+  background-color: #1C1C1C;
 }
 
 .App {
   text-align: center;
-  background-color: #1C1C1C; /* Match body background */
-  color: #FFFFFF; /* White text */
+  background-color: #1C1C1C;
+  color: #FFFFFF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,14 +21,14 @@ body, html {
 }
 
 .title {
-  color: #fc2a2a; /* Light Red Title */
-  font-size: 32px; /* Base size for better scaling */
+  color: #fc2a2a;
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .dropzone {
-  border: 2px dashed #fc2a2a; /* Light Red Border */
+  border: 2px dashed #fc2a2a;
   border-radius: 5px;
   padding: 20px;
   width: 80%;
@@ -42,21 +41,20 @@ body, html {
 }
 
 .dropzone.active {
-  background-color: rgba(255, 127, 127, 0.3); /* Light Red on Active */
+  background-color: rgba(255, 127, 127, 0.3);
 }
 
-/* Button Styling */
 button {
   position: relative;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #ff3300; /* Dark Orange Button */
-  color: #FFFFFF; /* Default text color is white */
+  background-color: #ff3300;
+  color: #FFFFFF;
   border: none;
   border-radius: 5px;
-  overflow: hidden; /* Hide the sliding background */
-  transition: color 0.3s ease; /* Transition for text color */
+  overflow: hidden;
+  transition: color 0.3s ease;
 }
 
 button:disabled {
@@ -64,29 +62,28 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Text color change on hover */
 button:hover:enabled {
-  color: #000; /* Change text color to black on hover */
+  color: #000;
 }
 
 button::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%; /* Start off the left */
+  left: -100%;
   width: 100%;
   height: 100%;
-  background-color: #cc1616; /* Light Red */
-  transition: left 0.8s ease; /* Transition effect for sliding */
-  z-index: 0; /* Send behind the text */
+  background-color: #cc1616;
+  transition: left 0.8s ease;
+  z-index: 0;
 }
 
 button:hover:enabled::before {
-  left: 0; /* Slide in from the left */
+  left: 0;
 }
 
 button span {
-  position: relative; /* Position relative for proper stacking */
+  position: relative;
   z-index: 1;
   font-weight: 900;
 }
@@ -94,10 +91,9 @@ button span {
 .result {
   margin-top: 2px;
   font-size: 18px;
-  color: #FFFFFF; /* White for Results Text */
+  color: #FFFFFF;
 }
 
-/* Loader for Circular Processing Effect */
 .loader {
   position: fixed;
   top: 50%;
@@ -105,8 +101,8 @@ button span {
   width: 80px;
   height: 80px;
   margin: -40px 0 0 -40px; 
-  border: 8px solid rgba(255, 127, 127, 0.2); /* Light Red Border */
-  border-top: 8px solid #FF7F7F; /* Light Red for Spinning */
+  border: 8px solid rgba(255, 127, 127, 0.2);
+  border-top: 8px solid #FF7F7F;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   z-index: 10;
@@ -116,7 +112,6 @@ button span {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-/* Medium Screens - Tablets and Laptops */
 @media (min-width: 768px) and (max-width: 999px) {
   .title {
     font-size: 36px;
@@ -135,7 +130,6 @@ button span {
   }
 }
 
-/* Large Screens - Desktops and Larger Laptops */
 @media (min-width: 1000px) {
   .App {
     width: 100%;
