@@ -1,5 +1,5 @@
 // frontend/src/App.js
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
 import './App.css';
@@ -37,7 +37,7 @@ function App() {
           "Content-Type": "multipart/form-data",
         },
       });
-      
+
       const aiResult = response.data.aiReport;
       setResult({
         isAI: aiResult.isAi,
@@ -61,20 +61,26 @@ function App() {
     <div className="App">
       <h1 className="title">AI Song Detector</h1>
 
-      <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : ''}`}>
-        <input {...getInputProps()} />
-        {isDragActive ? (
-          <p>Drop the file here ...</p>
-        ) : selectedFile ? (
-          <p>Selected File: {selectedFile.name}</p>
-        ) : (
-          <p>Drag & Drop an audio file here, or click to select one</p>
-        )}
-      </div>
+      {/* Hide dropzone when loading */}
+      {!loading && (
+        <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : ''}`}>
+          <input {...getInputProps()} />
+          {isDragActive ? (
+            <p>Drop the file here ...</p>
+          ) : selectedFile ? (
+            <p>Selected File: {selectedFile.name}</p>
+          ) : (
+            <p>Drag & Drop an audio file here, or click to select one</p>
+          )}
+        </div>
+      )}
 
       <button onClick={isNewTask ? handleNewTask : handleSubmit} disabled={!selectedFile || loading}>
-        {loading ? "Processing..." : isNewTask ? "New Task" : "Check if AI"}
+        <span>{loading ? "Processing..." : isNewTask ? "New Task" : "Check if AI"}</span>
       </button>
+
+
+      {loading && <div className="loader"></div>} {/* Circular loader element */}
 
       {result && (
         <div className="result">
