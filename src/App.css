@@ -7,34 +7,35 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: #1e1e2f; /* Dark blue base */
 }
 
 .App {
   text-align: center;
-  background-color: #000;
-  color: #fff;
+  background-color: #1e1e2f;
+  color: #e0e0e0; /* Light grey text */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .title {
-  color: #ff0000;
-  font-size: 32px; /* Base size for better scaling */
+  color: #5a80d6; /* Soft blue */
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .dropzone {
-  border: 2px dashed #ff0000;
+  border: 2px dashed #5a80d6;
   border-radius: 5px;
   padding: 20px;
   width: 80%;
   max-width: 400px;
-  color: #fff;
+  color: #e0e0e0;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 20px;
@@ -42,14 +43,14 @@ body, html {
 }
 
 .dropzone.active {
-  background-color: rgba(255, 0, 0, 0.3);
+  background-color: rgba(90, 128, 214, 0.3); /* Highlighted blue */
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #ff0000;
+  background-color: #6c63ff; /* Purple */
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -57,18 +58,31 @@ button {
 }
 
 button:disabled {
-  background-color: #666;
+  background-color: #4e4e6f;
   cursor: not-allowed;
 }
 
 button:hover:enabled {
-  background-color: #cc0000;
+  background-color: #5b52cc;
 }
 
 .result {
-  margin-top: 2px;
+  margin-top: 20px;
   font-size: 18px;
-  color: #fff;
+  color: #e0e0e0;
+}
+
+/* Background Animation during Processing */
+.processing {
+  background: linear-gradient(-45deg, #1e1e2f, #343a60, #1e1e2f, #343a60);
+  background-size: 400% 400%;
+  animation: gradientAnimation 3s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* Medium Screens - Tablets and Laptops */
