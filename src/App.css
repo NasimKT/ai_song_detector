@@ -1,0 +1,92 @@
+/* Current Design for screens less than 1000px */
+.App {
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: #ff0000;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.dropzone {
+  border: 2px dashed #ff0000;
+  border-radius: 5px;
+  padding: 30px;
+  width: 80%;
+  max-width: 400px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dropzone.active {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+button:hover:enabled {
+  background-color: #cc0000;
+}
+
+.result {
+  margin-top: 2px;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* New Design for screens 1000px and larger */
+@media (min-width: 1000px) {
+  .App {
+    display: flex;
+    width: 1536px;
+    flex-direction: column; /* Change to row layout for larger screens */
+    justify-content: space-around; /* Space items evenly */
+    align-items: center; /* Center vertically */
+  }
+
+  .title {
+    font-size: 48px; /* Larger title font size */
+    margin-bottom: 20px; /* Reduced margin for better alignment */
+  }
+
+  .dropzone {
+    width: 40%; /* Set dropzone width to 40% for larger screens */
+    max-width: 600px; /* Increase max width for the dropzone */
+    padding: 40px; /* More padding for larger screens */
+  }
+
+  button {
+    padding: 12px 24px; /* Larger padding for buttons */
+    font-size: 18px; /* Larger font size for buttons */
+  }
+
+  .result {
+    font-size: 20px; /* Larger font size for results */
+  }
+}
